@@ -1,27 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", bold;
+  font-size: medium;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body{
+  background-color: #181818;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.links{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.lists{
+  display: grid;
+  justify-content: center;
+  list-style: none;
+}
+
+button{
+  color: black;
+  background-color: transparent;
+  border: 1px solid aliceblue;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.country{
+  display: inline-flex;
+  justify-content: center;
+  max-width: 15rem;
+  background-color: azure;
+  margin: 1rem;
+  padding: 1rem;
 }
