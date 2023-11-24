@@ -4,11 +4,11 @@ import { useContext } from "react";
 
 export const CardName = ({ children }: { children: any }) => {
   const value = useContext(CountryContext);
-  return <div>{children}</div>;
+  return <p>{children}</p>;
 };
 
 export const CardFlag = ({ children }: { children: any }) => {
-  return <img src={children} alt="" />;
+  return <img className="flags" src={children} alt="" />;
 };
 export const Card = ({
   countryName,
@@ -18,9 +18,9 @@ export const Card = ({
   countryFlag: string;
 }) => {
   return (
-    <div>
-      <CardName>{countryName}</CardName>
+    <div className="card">
       <CardFlag>{countryFlag}</CardFlag>
+      <CardName>{countryName}</CardName>
     </div>
   );
 };

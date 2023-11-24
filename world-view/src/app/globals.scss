@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", bold;
+  font-size: medium;
+  transition: all 0.3s ease;
+  background-color: #003E3F;
+  color: #B0CEFC;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  .header{
+    font-size: 50px;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #B0CEFC;
+  }
+}
+
+.flags{
+  display: grid;
+  border-radius: 1rem;
+  margin: auto;
+  max-width: 100px;
+}
+
+.country-list, .card, .card p{
+  display: grid;
+  justify-content: center;
+  p{
+    padding: 1rem;
+    background-color: transparent;
+  }
+}
+
+@media (width > 600px){
+  .country-list{
+    background-color: red;
+    .card{
+      columns: 2;
+    }
+  }
+}
