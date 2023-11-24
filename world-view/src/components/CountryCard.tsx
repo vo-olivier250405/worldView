@@ -29,11 +29,14 @@ export const CountryCard = () => {
 
   return countryData.map((element: Country) => {
     return (
-      <>
+      <div key={element.cca2}>
         <CountryContext.Provider value={countryData}>
-          <Card countryName={element.name.official} />
+          <Card
+            countryName={element.name.official}
+            countryFlag={element.flags.png}
+          />
         </CountryContext.Provider>
-      </>
+      </div>
     );
   });
 };
