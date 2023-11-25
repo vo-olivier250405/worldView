@@ -25,6 +25,10 @@ header{
   }
 }
 
+main{
+  display: flex;
+}
+
 .flags{
   display: grid;
   border-radius: 1rem;
@@ -39,6 +43,23 @@ header{
   p{
     padding: 1rem;
     background-color: transparent;
+  }
+}
+
+.nav-bar{
+  display: grid;
+  justify-content: left;
+  margin: 1rem;
+  border: #B0CEFC 1px solid;
+  padding: 1rem;
+  max-width: fit-content;
+  border-radius: 10px;
+  height: fit-content;
+  button{
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    border: #B0CEFC 1px solid;
   }
 }
 
