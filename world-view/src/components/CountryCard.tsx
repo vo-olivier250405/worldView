@@ -29,22 +29,9 @@ export const CountryCard = () => {
       return setCoutryData(bubbleSort(response.data));
     });
   }, []);
-  return countryData.map((element: Country) => {
-    if (
-      element.name.official ===
-      "Hong Kong Special Administrative Region of the People's Republic of China"
-    ) {
-      element.name.official = "H.K.S.A.R.P.R.C";
-    }
-    return (
-      <div key={element.cca2}>
-        <CountryContext.Provider value={countryData}>
-          <Card
-            countryName={element.name.official}
-            countryFlag={element.flags.png}
-          />
-        </CountryContext.Provider>
-      </div>
-    );
-  });
+  return (
+    <>
+      <Card countryData={countryData} />;
+    </>
+  );
 };

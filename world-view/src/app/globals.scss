@@ -11,6 +11,10 @@
   color: #B0CEFC;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 header{
   display: flex;
   justify-content: center;
@@ -25,7 +29,8 @@ header{
   display: grid;
   border-radius: 1rem;
   margin: auto;
-  max-width: 100px;
+  width: 100px;
+  height: 60px;
 }
 
 .country-list, .card, .card p{
@@ -37,11 +42,26 @@ header{
   }
 }
 
+@media (width > 400px){
+  .country-list{
+    display: inline-block;
+    columns: 2;
+    margin: 1rem;
+  }
+}
+
 @media (width > 600px){
   .country-list{
-    background-color: red;
-    .card{
-      columns: 2;
-    }
+    display: inline-block;
+    columns: 3;
+    margin: 1rem;
+  }
+}
+
+@media (width > 900px) {
+  .country-list{
+    display: inline-block;
+    columns: 6;
+    margin: 1rem;
   }
 }
