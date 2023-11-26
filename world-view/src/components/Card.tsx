@@ -18,7 +18,7 @@ export const CardContainer = ({
   countryFlag: string;
 }) => {
   return (
-    <div>
+    <div className="card-container">
       <CardFlag>{countryFlag}</CardFlag>
       <CardName>{countryName}</CardName>
     </div>

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Card } from "./Card";
 import { Country } from "@/interfaces/country";
 import removeAccents from "remove-accents";
+import { AnimatePresence, delay, motion } from "framer-motion";
 
 const bubbleSort = (tab: Country[]) => {
   for (let i = 0; i < tab.length; i++) {
@@ -24,14 +25,15 @@ const bubbleSort = (tab: Country[]) => {
 
 export const CountryCard = () => {
   const [countryData, setCoutryData] = useState<Country[]>([]);
+
   useEffect(() => {
     fetchAllCountriesData().then((response) => {
       return setCoutryData(bubbleSort(response.data));
     });
   }, []);
   return (
-    <>
+    <div className="data-trigger">
       <Card countryData={countryData} />;
-    </>
+    </div>
   );
 };

@@ -6,13 +6,15 @@ export const NavBar = () => {
   const [showInput, setShowInput] = useState(false);
   return (
     <>
-      <section className="nav-bar">
-        <button>
-          <FontAwesomeIcon icon={faHome} />
-        </button>
-        <button>
-          <FontAwesomeIcon icon={faSearch} />
-        </button>
+      <section className="container">
+        <section className="nav-bar">
+          <button>
+            <FontAwesomeIcon icon={faHome} />
+          </button>
+          <button>
+            <FontAwesomeIcon icon={faSearch} />
+          </button>
+        </section>
       </section>
     </>
   );
