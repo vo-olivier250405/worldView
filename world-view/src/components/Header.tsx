@@ -6,7 +6,6 @@ export const Header = () => {
     <header>
       <NavBar />
       <div className="header">WORLD VIEW</div>
-      <Logo></Logo>
     </header>
   );
 };

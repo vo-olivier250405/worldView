@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CountryCard } from "@/components/CountryCard";
 import { Header } from "@/components/Header";
 import { PageWrapper } from "./PageWrapper";
+import { useEffect } from "react";
 
 export default function Home() {
   return (

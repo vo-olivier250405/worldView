@@ -1,11 +1,9 @@
 "use client";
 import { fetchAllCountriesData } from "@/Country/CountryService";
-import { CountryContext } from "@/contexts/contexts";
 import { useState, useEffect } from "react";
 import { Card } from "./Card";
 import { Country } from "@/interfaces/country";
 import removeAccents from "remove-accents";
-import { AnimatePresence, delay, motion } from "framer-motion";
 
 const bubbleSort = (tab: Country[]) => {
   for (let i = 0; i < tab.length; i++) {
@@ -32,8 +30,8 @@ export const CountryCard = () => {
     });
   }, []);
   return (
-    <div className="data-trigger">
-      <Card countryData={countryData} />;
-    </div>
+    <>
+      <Card countryData={countryData} />
+    </>
   );
 };

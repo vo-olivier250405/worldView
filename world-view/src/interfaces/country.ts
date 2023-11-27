@@ -3,7 +3,7 @@ export type OfficialCommon = { official: string; common: string };
 export type CountryName = {
   common: string;
   official: string;
-  nativeName: OfficialCommon;
+  nativeName: { official: string; common: string };
 };
 
 export type Country = {
@@ -22,7 +22,7 @@ export type Country = {
   altSpellings: string[];
   region: string;
   subregion: string;
-  languages: { fra: string };
+  languages: { [key: string]: string };
   translations: {
     ara: OfficialCommon;
     bre: OfficialCommon;
@@ -50,13 +50,12 @@ export type Country = {
     urd: OfficialCommon;
     zho: OfficialCommon;
   };
-  latling: number[];
+  latlng: number[];
   landlocked: boolean;
   borders: string[];
   area: number;
   demonyms: {
-    eng: { f: string; m: string };
-    fra: { f: string; m: string };
+    [key: string]: { f: string; m: string };
   };
   flag: string;
   maps: {

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-console.log(process.env.BASE_URL, "here");
+console.log(process.env.BASE_URL);
 export const api = axios.create({
   baseURL: "https://restcountries.com/",
   timeout: 10000,

@@ -1,6 +1,8 @@
 import { CountryContext } from "@/contexts/contexts";
 import { Country } from "@/interfaces/country";
-import { useContext } from "react";
+import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useContext, useEffect } from "react";
 
 export const CardName = ({ children }: { children: any }) => {
   const value = useContext(CountryContext);
@@ -10,17 +12,19 @@ export const CardName = ({ children }: { children: any }) => {
 export const CardFlag = ({ children }: { children: any }) => {
   return <img className="flags" src={children} alt="" />;
 };
-export const CardContainer = ({
-  countryName,
-  countryFlag,
-}: {
-  countryName: string;
-  countryFlag: string;
-}) => {
+
+export const CardContainer = ({ countryData }: { countryData: Country }) => {
   return (
     <div className="card-container">
-      <CardFlag>{countryFlag}</CardFlag>
-      <CardName>{countryName}</CardName>
+      <Link
+        href={{
+          pathname: "../pages/details/",
+          query: { name: countryData.name.common },
+        }}
+      >
+        <CardFlag>{countryData.flags.png}</CardFlag>
+        <CardName>{countryData.name.official}</CardName>
+      </Link>
     </div>
   );
 };
@@ -30,10 +34,7 @@ export const Card = ({ countryData }: { countryData: Country[] }) => {
     return (
       <div key={element.cca2} className="card">
         <CountryContext.Provider value={countryData}>
-          <CardContainer
-            countryName={element.name.official}
-            countryFlag={element.flags.png}
-          />
+          <CardContainer countryData={element} />
         </CountryContext.Provider>
       </div>
     );
