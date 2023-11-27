@@ -5,6 +5,7 @@ import { Country } from "@/interfaces/country";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { DetailCountry } from "../../../components/DetailCountry";
+import { PageWrapper } from "@/app/PageWrapper";
 
 type IRouter = {
   path: string;
@@ -27,7 +28,9 @@ const Page = () => {
 
   return (
     <>
-      <DetailCountry country={countryData} />
+      <PageWrapper>
+        <DetailCountry country={countryData} />
+      </PageWrapper>
     </>
   );
 };
