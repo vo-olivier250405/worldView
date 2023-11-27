@@ -1,7 +1,7 @@
 import { Country } from "@/interfaces/country";
 
 export const Languages = ({ country }: { country: Country }) => {
-  return getMutipleElementInDict(country.languages);
+  return <>Language(s): {getMutipleElementInDict(country.languages)}</>;
 };
 
 const Demonyms = ({ country }: { country: Country }) => {
@@ -12,6 +12,7 @@ const Demonyms = ({ country }: { country: Country }) => {
   return temp.map((element) => {
     return (
       <div key={element}>
+        Demonyms
         {"\n"}
         {element}: {country.demonyms[element].f} {country.demonyms[element].m}
       </div>

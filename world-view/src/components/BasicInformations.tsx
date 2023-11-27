@@ -1,15 +1,16 @@
 import { Country, OfficialCommon } from "@/interfaces/country";
 
 export const GetNativeName = ({ country }: { country: Country }) => {
-  let temp: OfficialCommon[] = [];
+  let nameTab = [];
   for (const name in country.name.nativeName) {
-    temp.push(country.name.nativeName[name]);
+    nameTab.push(name);
   }
-  return temp.map((nativeName) => {
+  return nameTab.map((name) => {
     return (
-      <div key={nativeName.official}>
-        <h2>Common native name: {nativeName.common}</h2>
-        <h2>Official native name: {nativeName.official}</h2>
+      <div key={name} className="native-names">
+        <h1>Native Language: {name}</h1>
+        <h2>Native common name: {country.name.nativeName[name].common}</h2>
+        <h2>Native official name: {country.name.nativeName[name].official}</h2>
       </div>
     );
   });
@@ -20,13 +21,27 @@ export const BasicInformations = ({ country }: { country: Country }) => {
     <section className="basic-country-informations">
       {country.name && (
         <>
-          <h2>Common name: {country.name.common}</h2>
-          <h2>Official common name: {country.name.official}</h2>
-          {country.name.nativeName && <GetNativeName country={country} />}
+          <div>
+            <h1>NATIVE NAMES</h1>
+            {country.name.nativeName && <GetNativeName country={country} />}
+          </div>
+
+          <div>
+            <h1>OTHER NAMES</h1>
+            <div>
+              <h2>Common name: {country.name.common}</h2>
+              <h2>Official common name: {country.name.official}</h2>
+            </div>
+          </div>
         </>
       )}
-
-      {country.tld && <h2>{country.tld}</h2>}
+      <div>
+        {country.tld && (
+          <h2>
+            <span>Top-Level-Domain</span>: {country.tld}
+          </h2>
+        )}
+      </div>
     </section>
   );
 };

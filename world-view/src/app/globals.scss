@@ -88,6 +88,42 @@ main{
   }
 }
 
+.title-flag{
+  display: grid;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+  h1{
+    padding: 1rem;
+    margin: auto;
+    font-size: 40px;
+    background-color: transparent;
+  }
+  img{
+    border-radius: 10px;
+    box-shadow: 0.5rem 0.5rem #13909e;
+  }
+}
+
+.basic-country-informations{
+  display: grid;
+  justify-content: center;
+  padding: 1rem;
+  div{
+    padding: 1rem;
+  }
+  h1{
+    font-size: 30px;
+  }
+  span{
+    font-size: 30px;
+  }
+
+}
+
+
+// RESPONSIVE
+
 @media (width > 400px){
   .country-list{
     display: flex;
@@ -98,6 +134,30 @@ main{
     .card{
       width: 200px;
       height: max-content
+    }
+  }
+}
+
+
+@media (width > 600px) {
+  .title-flag{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    h1{
+      font-size: 100px;
+      
+    }
+    img{
+      width: 500px;
+    }
+  }
+  .basic-country-informations{
+    display: flex;
+    justify-content: center;
+    div{
+      padding: 0;
+      margin: 1rem;
     }
   }
 }
