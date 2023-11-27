@@ -18,7 +18,7 @@ api.interceptors.request.use((request) => {
 // Ajoutez un intercepteur pour afficher les réponses entrantes
 api.interceptors.response.use(
   (response) => {
-    console.log("Response:", response);
+    console.log("Response:", response.data);
     return response;
   },
   (error) => {

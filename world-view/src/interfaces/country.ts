@@ -3,7 +3,7 @@ export type OfficialCommon = { official: string; common: string };
 export type CountryName = {
   common: string;
   official: string;
-  nativeName: { official: string; common: string };
+  nativeName: { [key: string]: OfficialCommon };
 };
 
 export type Country = {
