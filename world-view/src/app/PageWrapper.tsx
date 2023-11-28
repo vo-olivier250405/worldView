@@ -23,7 +23,7 @@ export const HoverAnimation = ({ children }: { children: any }) => {
   return (
     <>
       <AnimatePresence>
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
           {children}
         </motion.div>
       </AnimatePresence>
@@ -38,7 +38,7 @@ export const RotateOnClick = ({ children }: { children: any }) => {
       className="block"
       onClick={() => setIsActive(!isActive)}
       animate={{
-        rotate: isActive ? 40 : 0,
+        rotate: isActive ? 90 : 0,
       }}
     >
       {children}

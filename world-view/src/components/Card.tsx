@@ -23,7 +23,7 @@ export const CardContainer = ({ countryData }: { countryData: Country }) => {
         }}
       >
         <CardFlag>{countryData.flags.png}</CardFlag>
-        <CardName>{countryData.name.official}</CardName>
+        <CardName>{countryData.name.common}</CardName>
       </Link>
     </div>
   );

@@ -22,10 +22,14 @@ header{
   height: 50rem;
   .header{
     padding-top: 20rem;
+    padding-left: 6rem;
     padding-right: 3rem;
     font-size: 80px;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px #B0CEFC;
+  }
+  img{
+    display: none;
   }
 }
 
@@ -71,22 +75,37 @@ main{
   background-color: #7f9192;
 }
 
-.nav-bar{
+section.container{
+  position: absolute;
+  background-color: transparent;
   display: grid;
-  justify-content: left;
-  border: #a0bbbd 1px solid;
-  padding: 1rem;
-  max-width: fit-content;
-  border-radius: 10px;
-  height: fit-content;
-  button{
-    margin-bottom: 1rem;
-    border-radius: 10px;
-    padding: 0.5rem;
+  
+  .nav-bar{
+    background-color: #021517;
+    padding: 1.5rem;
+    
+    .menu{
+      border-radius: 10px;
+      background-color: transparent;
+      padding-bottom: 1rem;
+
+    }
+  }
+  .buttons button{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: none;
+    background-color: transparent;
+  }
+  .search-bar{
+    margin: 1rem;
+    outline: none;
     border: #a0bbbd 1px solid;
+    padding: 1rem;
+    font-size: 20px;
   }
 }
-
+ 
 .title-flag{
   display: grid;
   justify-content: center;
@@ -123,13 +142,15 @@ main{
 
 // RESPONSIVE
 
-@media (width > 400px){
+@media (width > 200px){
   .country-list{
     display: flex;
     flex-wrap: wrap;
     margin: 1rem;
     background-color: #a0bbbd;
     padding: 2rem;
+    height: 300rem;
+    width: 1600px;
     .card{
       width: 200px;
       height: max-content
@@ -154,6 +175,7 @@ main{
       width: 500px;
     }
   }
+
   .basic-country-informations{
     display: flex;
     justify-content: center;
@@ -161,5 +183,11 @@ main{
       padding: 0;
       margin: 1rem;
     }
+  }
+}
+
+@media (width > 1000px){
+  header .img{
+    display: flex;
   }
 }
