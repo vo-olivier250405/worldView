@@ -55,7 +55,8 @@ export const filterCountry = (
 
 export const CountryCard = ({ filter }: { filter: string }) => {
   const [countryData, setCountryData] = useState<Country[]>([]);
-  const [copyCountryData, setCopyCountryData] = useState(countryData);
+  const [copyCountryData, setCopyCountryData] =
+    useState<Country[]>(countryData);
 
   useEffect(() => {
     fetchAllCountriesData().then((response) => {
@@ -65,7 +66,7 @@ export const CountryCard = ({ filter }: { filter: string }) => {
 
   useEffect(() => {
     setCopyCountryData(filterCountry(countryData, filter, countryData));
-  }, [filter]);
+  }, [filter, countryData]);
 
   return (
     <>

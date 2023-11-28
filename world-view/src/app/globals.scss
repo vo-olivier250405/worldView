@@ -97,13 +97,6 @@ section.container{
     border: none;
     background-color: transparent;
   }
-  .search-bar{
-    margin: 1rem;
-    outline: none;
-    border: #a0bbbd 1px solid;
-    padding: 1rem;
-    font-size: 20px;
-  }
 }
  
 .title-flag{
@@ -139,7 +132,14 @@ section.container{
 
 }
 
-
+.search-bar{
+  padding: 1rem;
+  margin: auto;
+  border: #a0bbbd 1px solid;
+  border-radius: 10px;
+  display: flex;
+  outline: none;
+}
 // RESPONSIVE
 
 @media (width > 200px){
