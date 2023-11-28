@@ -26,14 +26,17 @@ export const filterCountry = (
   filter: string,
   originData: Country[]
 ) => {
-  let temp: Country[] = [];
+  if (filter === "") {
+    return originData;
+  }
+  let temp: Country[] = originData;
   // Check temp list
   temp = temp.filter((element: Country) => {
     element.name.common.slice(0, filter.length).toLowerCase() ===
       filter.toLowerCase();
   });
+
   if (!temp) {
-    console.log("hKJdhqzk", temp);
     temp = originData;
   }
   // Filter
@@ -59,9 +62,11 @@ export const CountryCard = ({ filter }: { filter: string }) => {
       return setCountryData(bubbleSort(response.data));
     });
   }, []);
+
   useEffect(() => {
     setCopyCountryData(filterCountry(countryData, filter, countryData));
   }, [filter]);
+
   return (
     <>
       <Card countryData={copyCountryData} />

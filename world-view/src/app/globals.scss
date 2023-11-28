@@ -149,10 +149,10 @@ section.container{
     margin: 1rem;
     background-color: #a0bbbd;
     padding: 2rem;
-    height: 300rem;
+    height: max-content + 500rem;
     width: 1600px;
     .card{
-      width: 200px;
+      width: 300px;
       height: max-content
     }
   }
