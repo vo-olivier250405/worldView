@@ -2,7 +2,7 @@ import { faBars, faHome, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { HoverAnimation } from "@/app/PageWrapper";
+import { HoverAnimation } from "@/app/Animations";
 
 export const NavBar = () => {
   const [showButtons, setShowButtons] = useState(false);
