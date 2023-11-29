@@ -21,6 +21,10 @@ header{
   margin: 1rem;
   height: 50rem;
   width: 100%;
+  .planet{
+    display: none;
+    width: 500px;
+  }
   .header{
     h1{
       padding-top: 20rem;
@@ -149,6 +153,7 @@ section.container{
 // RESPONSIVE
 
 @media (width > 200px){
+
   .country-list{
     display: flex;
     flex-wrap: wrap;
@@ -169,6 +174,7 @@ section.container{
 
 
 @media (width > 600px) {
+
   .title-flag{
     display: flex;
     justify-content: space-between;
@@ -193,7 +199,10 @@ section.container{
 }
 
 @media (width > 1000px){
+  header .planet{
+    display: initial;
+  }
   header .img{
-    display: flex;
+    display: flex; 
   }
 }

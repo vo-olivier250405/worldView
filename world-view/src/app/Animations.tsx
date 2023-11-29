@@ -102,7 +102,7 @@ const Scene = ({ numStars = 100 }: { numStars: number }) => {
     camera.lookAt(0, 0, 0);
   });
 
-  useLayoutEffect(() => gl.setPixelRatio(0.3));
+  // useLayoutEffect(() => gl.setPixelRatio(0.3));
   const stars = [];
   for (let i = 0; i < numStars; i++) {
     stars.push(
@@ -119,12 +119,12 @@ const Scene = ({ numStars = 100 }: { numStars: number }) => {
   );
 };
 
-export const AnimatedPLanet = ({ className }: { className: string }) => {
+export const AnimatedPLanet = () => {
   return (
-    <>
-      <Canvas gl={{ antialias: false }}>
+    <div className="planet">
+      <Canvas gl={{ antialias: true }}>
         <Scene numStars={100} />
       </Canvas>
-    </>
+    </div>
   );
 };

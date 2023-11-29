@@ -11,6 +11,7 @@ type IRouter = {
   path: string;
   name: string | null;
 };
+
 const Page = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -29,7 +30,6 @@ const Page = () => {
   return (
     <>
       <PageWrapper>
-
         <DetailCountry country={countryData} />
       </PageWrapper>
     </>

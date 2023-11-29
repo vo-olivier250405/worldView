@@ -10,7 +10,7 @@ export const CardName = ({ children }: { children: any }) => {
 };
 
 export const CardFlag = ({ children }: { children: any }) => {
-  return <img className="flags" src={children} alt="" />;
+  return <img className="flags" src={children} alt="Drapeau" />;
 };
 
 export const CardContainer = ({ countryData }: { countryData: Country }) => {
@@ -22,7 +22,7 @@ export const CardContainer = ({ countryData }: { countryData: Country }) => {
           query: { name: countryData.name.common },
         }}
       >
-        <CardFlag>{countryData.flags.png}</CardFlag>
+        <CardFlag>{countryData.flags.svg}</CardFlag>
         <CardName>{countryData.name.common}</CardName>
       </Link>
     </div>

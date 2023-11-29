@@ -17,7 +17,7 @@ export default function Home() {
       <PageWrapper>
         <header>
           <NavBar />
-          <AnimatedPLanet className="planet" />
+          <AnimatedPLanet />
           {/* <RotateOnClick>
             <Image className="img" src={earth} alt="Logo" />
           </RotateOnClick> */}
