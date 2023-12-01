@@ -7,6 +7,7 @@ import { ButtonDisplayGeoData } from "./GeographicalData";
 import { ButtonDisplayPoliticalAdminData } from "./PoliticalAdminData";
 import { TitleFlag } from "./TitleFlag";
 import { ButtonDisplayEcoDemoData } from "./EcoDemographicData";
+import { ButtonHome } from "./ButtonHome";
 
 export const getDistance = (country1: Country, country2: Country): boolean => {
   const degToRAd = (degrees: number) => {
@@ -32,6 +33,7 @@ export const getDistance = (country1: Country, country2: Country): boolean => {
 export const DetailCountry = ({ country }: { country: Country }) => {
   return (
     <section>
+      <ButtonHome />
       <TitleFlag country={country} />
       <div className="datas">
         <ButtonDisplayBasicInformation country={country} />
