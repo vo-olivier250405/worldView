@@ -121,7 +121,17 @@ section.container{
   padding: 1rem;
   border: 1px solid #a0bbbd;
   margin: 1rem;
+  width: 150px;
+  box-shadow: 0.5rem 0.5rem;
 }
+
+.displays-buttons:hover{
+  transition: all 0.3s ease;
+  background-color: #a0bbbd;
+  color: #021517;
+  box-shadow: 0.5rem 0.5rem #043f46;
+}
+
 .title-flag{
   display: grid;
   justify-content: center;
@@ -139,7 +149,11 @@ section.container{
   }
 }
 
-.basic-country-informations{
+.basic-country-informations,
+.geographical-data,
+.political-admin-data,
+.eco-demo-data,
+.cultural-data{
   display: grid;
   justify-content: center;
   padding: 1rem;
@@ -156,6 +170,13 @@ section.container{
     font-size: 30px;
   }
 
+}
+
+.datas{
+  transition: all 0.3s ease;
+  display: grid;
+  justify-content: center;
+  padding: 1rem;
 }
 
 // RESPONSIVE
@@ -181,7 +202,7 @@ section.container{
 }
 
 
-@media (width > 600px) {
+@media (width > 900px) {
 
   .title-flag{
     display: flex;
@@ -196,14 +217,10 @@ section.container{
     }
   }
 
-  .basic-country-informations{
+  .datas{
     display: flex;
-    justify-content: center;
-    div{
-      padding: 0;
-      margin: 1rem;
-    }
-  }
+    justify-content: left;
+}
 }
 
 @media (width > 1000px){

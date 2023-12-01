@@ -66,7 +66,7 @@ export const ButtonDisplayCulturalData = ({
                 setIsShow(false);
               }}
             >
-              NAMES
+              Cultural Data
             </button>
           </PageWrapper>
         </section>

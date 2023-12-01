@@ -31,13 +31,15 @@ export const getDistance = (country1: Country, country2: Country): boolean => {
 
 export const DetailCountry = ({ country }: { country: Country }) => {
   return (
-    <>
+    <section>
       <TitleFlag country={country} />
-      <ButtonDisplayBasicInformation country={country} />
-      <ButtonDisplayGeoData country={country} />
-      <ButtonDisplayPoliticalAdminData country={country} />
-      <ButtonDisplayEcoDemoData country={country} />
-      <ButtonDisplayCulturalData country={country} />
-    </>
+      <div className="datas">
+        <ButtonDisplayBasicInformation country={country} />
+        <ButtonDisplayGeoData country={country} />
+        <ButtonDisplayPoliticalAdminData country={country} />
+        <ButtonDisplayEcoDemoData country={country} />
+        <ButtonDisplayCulturalData country={country} />
+      </div>
+    </section>
   );
 };

@@ -34,7 +34,7 @@ export const ButtonDisplayEcoDemoData = ({ country }: { country: Country }) => {
                 setIsShow(false);
               }}
             >
-              Eco-Demographical Data
+              Eco-Demographical
             </button>
           </PageWrapper>
         </section>
