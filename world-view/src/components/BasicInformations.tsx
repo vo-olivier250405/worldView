@@ -1,4 +1,6 @@
 import { Country, OfficialCommon } from "@/interfaces/country";
+import { useState } from "react";
+import { PageWrapper } from "@/app/Animations";
 
 export const GetNativeName = ({ country }: { country: Country }) => {
   let nameTab = [];
@@ -14,6 +16,46 @@ export const GetNativeName = ({ country }: { country: Country }) => {
       </div>
     );
   });
+};
+
+export const ButtonDisplayBasicInformation = ({
+  country,
+}: {
+  country: Country;
+}) => {
+  const [isClicked, setIsClicked] = useState(true);
+  const [isShow, setIsShow] = useState(true);
+  return (
+    <>
+      {isShow && (
+        <section>
+          <PageWrapper>
+            <button
+              className="displays-buttons"
+              onClick={() => {
+                setIsClicked(false);
+                setIsShow(false);
+              }}
+            >
+              NAMES
+            </button>
+          </PageWrapper>
+        </section>
+      )}
+      {!isClicked && (
+        <section
+          onClick={() => {
+            setIsShow(true);
+            setIsClicked(true);
+          }}
+        >
+          <PageWrapper>
+            <BasicInformations country={country} />
+          </PageWrapper>
+        </section>
+      )}
+    </>
+  );
 };
 
 export const BasicInformations = ({ country }: { country: Country }) => {

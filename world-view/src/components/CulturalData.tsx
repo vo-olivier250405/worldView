@@ -1,4 +1,6 @@
+import { PageWrapper } from "@/app/Animations";
 import { Country } from "@/interfaces/country";
+import { useState } from "react";
 
 export const Languages = ({ country }: { country: Country }) => {
   return <>Language(s): {getMutipleElementInDict(country.languages)}</>;
@@ -41,6 +43,46 @@ export const CulturalData = ({ country }: { country: Country }) => {
         <Languages country={country} />
         <Demonyms country={country} />
       </section>
+    </>
+  );
+};
+
+export const ButtonDisplayCulturalData = ({
+  country,
+}: {
+  country: Country;
+}) => {
+  const [isClicked, setIsClicked] = useState(true);
+  const [isShow, setIsShow] = useState(true);
+  return (
+    <>
+      {isShow && (
+        <section>
+          <PageWrapper>
+            <button
+              className="displays-buttons"
+              onClick={() => {
+                setIsClicked(false);
+                setIsShow(false);
+              }}
+            >
+              NAMES
+            </button>
+          </PageWrapper>
+        </section>
+      )}
+      {!isClicked && (
+        <section
+          onClick={() => {
+            setIsShow(true);
+            setIsClicked(true);
+          }}
+        >
+          <PageWrapper>
+            <CulturalData country={country} />
+          </PageWrapper>
+        </section>
+      )}
     </>
   );
 };

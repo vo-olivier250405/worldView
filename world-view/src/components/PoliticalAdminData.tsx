@@ -1,4 +1,6 @@
+import { PageWrapper } from "@/app/Animations";
 import { Country } from "@/interfaces/country";
+import { useState } from "react";
 
 export const booleanToString = (bool: boolean): string => {
   if (bool) {
@@ -18,5 +20,45 @@ export const PoliticalAdminData = ({ country }: { country: Country }) => {
         <h2>U.N Member: {booleanToString(country.unMember)}</h2>
       )}
     </section>
+  );
+};
+
+export const ButtonDisplayPoliticalAdminData = ({
+  country,
+}: {
+  country: Country;
+}) => {
+  const [isClicked, setIsClicked] = useState(true);
+  const [isShow, setIsShow] = useState(true);
+  return (
+    <>
+      {isShow && (
+        <section>
+          <PageWrapper>
+            <button
+              className="displays-buttons"
+              onClick={() => {
+                setIsClicked(false);
+                setIsShow(false);
+              }}
+            >
+              Political Admin Data
+            </button>
+          </PageWrapper>
+        </section>
+      )}
+      {!isClicked && (
+        <section
+          onClick={() => {
+            setIsShow(true);
+            setIsClicked(true);
+          }}
+        >
+          <PageWrapper>
+            <PoliticalAdminData country={country} />
+          </PageWrapper>
+        </section>
+      )}
+    </>
   );
 };

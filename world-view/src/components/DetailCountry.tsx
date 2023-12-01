@@ -1,12 +1,12 @@
 import { fetchAllCountriesData } from "@/Country/CountryService";
 import { Country } from "@/interfaces/country";
 import { useEffect, useState } from "react";
-import { CulturalData } from "./CulturalData";
-import { BasicInformations } from "./BasicInformations";
-import { GeographicalData } from "./GeographicalData";
-import { PoliticalAdminData } from "./PoliticalAdminData";
+import { ButtonDisplayCulturalData } from "./CulturalData";
+import { ButtonDisplayBasicInformation } from "./BasicInformations";
+import { ButtonDisplayGeoData } from "./GeographicalData";
+import { ButtonDisplayPoliticalAdminData } from "./PoliticalAdminData";
 import { TitleFlag } from "./TitleFlag";
-import { EcoDemographicData } from "./EcoDemographicData";
+import { ButtonDisplayEcoDemoData } from "./EcoDemographicData";
 
 export const getDistance = (country1: Country, country2: Country): boolean => {
   const degToRAd = (degrees: number) => {
@@ -33,11 +33,11 @@ export const DetailCountry = ({ country }: { country: Country }) => {
   return (
     <>
       <TitleFlag country={country} />
-      <BasicInformations country={country} />
-      <GeographicalData country={country} />
-      <PoliticalAdminData country={country} />
-      <EcoDemographicData country={country} />
-      <CulturalData country={country} />
+      <ButtonDisplayBasicInformation country={country} />
+      <ButtonDisplayGeoData country={country} />
+      <ButtonDisplayPoliticalAdminData country={country} />
+      <ButtonDisplayEcoDemoData country={country} />
+      <ButtonDisplayCulturalData country={country} />
     </>
   );
 };
