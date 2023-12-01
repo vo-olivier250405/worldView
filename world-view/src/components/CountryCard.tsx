@@ -21,30 +21,29 @@ const bubbleSort = (tab: Country[]) => {
   return tab;
 };
 
-export const filterCountry = (
-  allCountries: Country[],
+export const getFilteredCountries = (
   filter: string,
-  originData: Country[]
+  searchParams: string,
+  allCountries: Country[],
+  temp: Country[]
 ) => {
-  if (filter === "") {
-    return originData;
-  }
-  let temp: Country[] = originData;
-  // Check temp list
-  temp = temp.filter((element: Country) => {
-    element.name.common.slice(0, filter.length).toLowerCase() ===
-      filter.toLowerCase();
-  });
-
-  if (!temp) {
-    temp = originData;
-  }
-  // Filter
-  if (allCountries) {
+  if (!["all", ""].includes(filter)) {
     allCountries.map((country: Country) => {
       if (
-        country.name.common.slice(0, filter.length).toLowerCase() ===
-        filter.toLowerCase()
+        removeAccents(
+          country.name.common.slice(0, searchParams.length).toLowerCase()
+        ) === searchParams.toLowerCase() &&
+        country.region === filter
+      ) {
+        temp.push(country);
+      }
+    });
+  } else {
+    allCountries.map((country: Country) => {
+      if (
+        removeAccents(
+          country.name.common.slice(0, searchParams.length).toLowerCase()
+        ) === searchParams.toLowerCase()
       ) {
         temp.push(country);
       }
@@ -53,7 +52,41 @@ export const filterCountry = (
   return temp;
 };
 
-export const CountryCard = ({ filter }: { filter: string }) => {
+export const filterCountry = (
+  allCountries: Country[],
+  searchParams: string,
+  originData: Country[],
+  filter: string
+) => {
+  let temp: Country[] = originData;
+
+  if (searchParams === "") {
+    return originData;
+  }
+  // Check temp list
+  temp = temp.filter((element: Country) => {
+    removeAccents(
+      element.name.common.slice(0, searchParams.length).toLowerCase()
+    ) === searchParams.toLowerCase();
+  });
+
+  if (!temp) {
+    temp = originData;
+  }
+  // Filter
+  if (allCountries) {
+    temp = getFilteredCountries(filter, searchParams, allCountries, temp);
+  }
+  return temp;
+};
+
+export const CountryCard = ({
+  searchParams,
+  filter,
+}: {
+  searchParams: string;
+  filter: string;
+}) => {
   const [countryData, setCountryData] = useState<Country[]>([]);
   const [copyCountryData, setCopyCountryData] =
     useState<Country[]>(countryData);
@@ -65,9 +98,24 @@ export const CountryCard = ({ filter }: { filter: string }) => {
   }, []);
 
   useEffect(() => {
-    setCopyCountryData(filterCountry(countryData, filter, countryData));
-  }, [filter, countryData]);
-
+    setCopyCountryData(
+      filterCountry(countryData, searchParams, countryData, filter)
+    );
+    if (!["", "Antartica"].includes(filter) && searchParams === "") {
+      setCopyCountryData(
+        countryData.filter((element) => element.region === filter)
+      );
+    }
+    if (filter === "all") {
+      setCopyCountryData(countryData);
+    }
+    if (filter === "Antarctica") {
+      console.log("AAAH");
+      setCopyCountryData(
+        countryData.filter((e) => e.name.common === "Antarctica")
+      );
+    }
+  }, [searchParams, countryData, filter]);
   return (
     <>
       <Card countryData={copyCountryData} />
