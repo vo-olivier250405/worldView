@@ -12,6 +12,8 @@ export const booleanToString = (bool: boolean): string => {
 export const PoliticalAdminData = ({ country }: { country: Country }) => {
   return (
     <section className="political-admin-data">
+      <h1>Capital</h1>
+      <br />
       {country.capital && <h2>{country.capital}</h2>}
       {typeof country.independent === "boolean" && (
         <h2>Independent: {booleanToString(country.independent)}</h2>
