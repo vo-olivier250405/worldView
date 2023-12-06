@@ -242,6 +242,11 @@ section.container{
 }
 .geographical-data{
   .borders{
+      width: 300px;
+      height: fit-content;
+      overflow-y: scroll;
+      scrollbar-color: rebeccapurple green;
+      scrollbar-width: thin;
     h1{
       padding: 1rem;
     }

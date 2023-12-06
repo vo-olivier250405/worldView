@@ -50,8 +50,9 @@ export const GeographicalData = ({ country }: { country: Country }) => {
 
       <div className="borders">
         <hr />
-        <h1>Pays en bordures</h1>
+        <h1>Border Countries</h1>
         {borders &&
+          country.borders &&
           borders
             .filter((element) => country.borders.includes(element.fifa))
             .map((element: Country) => {

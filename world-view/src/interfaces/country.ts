@@ -16,7 +16,7 @@ export type Country = {
   independent: boolean;
   status: string;
   unMember: boolean;
-  currencies: { XOF: { name: string; symbol: string } };
+  currencies: { [key: string]: { name: string; symbol: string } };
   idd: { root: string; suffixes: string[] };
   capital: string[];
   altSpellings: string[];

@@ -5,18 +5,31 @@ import { PageWrapper } from "@/app/Animations";
 export const EcoDemographicData = ({ country }: { country: Country }) => {
   return (
     <section className="eco-demo-data">
-      {country.population && <h2>{country.population}</h2>}
-      {country.currencies && (
-        <>
-          {country.currencies.XOF && (
-            <h2>
-              {country.currencies.XOF.name}:{country.currencies.XOF.symbol}
-            </h2>
-          )}
-        </>
-      )}
+      {country.population && <h2>Population: {country.population}</h2>}
+      <GetCurrencies country={country} />
     </section>
   );
+};
+
+export const GetCurrencies = ({ country }: { country: Country }) => {
+  let nameTab: string[] = [];
+  for (const name in country.currencies) {
+    nameTab.push(name);
+  }
+  let gini: string[] = [];
+  for (const name in country.gini) {
+    gini.push(name);
+  }
+  return nameTab.map((name) => {
+    return (
+      <div key={name} className="native-names">
+        <h2>
+          {country.currencies[name].name}: {country.currencies[name].symbol}
+          {country.gini[gini[0]]}
+        </h2>
+      </div>
+    );
+  });
 };
 
 export const ButtonDisplayEcoDemoData = ({ country }: { country: Country }) => {
