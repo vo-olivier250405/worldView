@@ -154,9 +154,6 @@ section.container{
     box-shadow: 0.5rem 0.5rem #13909e;
   }
 }
-.borders{
-  scroll-behavior: auto;
-}
 
 .basic-country-informations,
 .geographical-data,
@@ -178,7 +175,6 @@ section.container{
   span{
     font-size: 30px;
   }
-
 }
 
 .datas{
@@ -187,6 +183,20 @@ section.container{
   justify-content: center;
   padding: 1rem;
 }
+
+.borders-flags{
+  display: grid;
+  justify-content: center;
+  h2{
+    padding: 0.5rem;
+    margin: auto;
+  }
+  img.flags{
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
 
 // RESPONSIVE
 
@@ -229,6 +239,15 @@ section.container{
   .datas{
     display: flex;
     justify-content: left;
+}
+.geographical-data{
+  .borders{
+    h1{
+      padding: 1rem;
+    }
+    
+    display: flex;
+  }
 }
 }
 

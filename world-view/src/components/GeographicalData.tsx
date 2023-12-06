@@ -36,33 +36,39 @@ export const GeographicalData = ({ country }: { country: Country }) => {
   return (
     <section className="geographical-data">
       <div className="latling">
+        <h1>Coord and area</h1>
+        <hr />
+        <br />
         {country.latlng && (
           <>
-            <h2>{country.latlng[0]} Latitude</h2>
-            <h2>{country.latlng[1]} Longitude</h2>
+            <h2>Latitude: {country.latlng[0]}°</h2>
+            <h2>Longitude: {country.latlng[1]}°</h2>
           </>
         )}
+        {country.area && <h2>Area: {country.area}</h2>}
       </div>
-      {country.area && <h2>{country.area}</h2>}
+
       <div className="borders">
         <hr />
-        <h2>Pays en bordures</h2>
+        <h1>Pays en bordures</h1>
         {borders &&
           borders
             .filter((element) => country.borders.includes(element.fifa))
             .map((element: Country) => {
               return (
-                <div>
-                  <h2>{element.name.common}</h2>
+                <div className="borders-flags">
+                  <img className="flags" src={element.flags.svg} alt="" />
+                  <h2 className="title">{element.name.common}</h2>
                 </div>
               );
             })}
         <hr />
       </div>
       {country.region && country.subregion && (
-        <h2>
-          {country.region}, {country.subregion}
-        </h2>
+        <div>
+          <h2>Region: {country.region}</h2>
+          <h2>Sub-regions {country.subregion}</h2>
+        </div>
       )}
     </section>
   );
