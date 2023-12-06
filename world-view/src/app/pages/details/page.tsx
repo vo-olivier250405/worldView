@@ -9,7 +9,7 @@ import { PageWrapper } from "@/app/Animations";
 
 type IRouter = {
   path: string;
-  name: string | null;
+  ccn3: string | null;
 };
 
 const Page = () => {
@@ -19,13 +19,13 @@ const Page = () => {
   const [countryData, setCountryData] = useState<Country>(Object);
 
   useEffect(() => {
-    setRouter({ path: pathname, name: searchParams.get("name") });
-    if (router.name) {
-      fetchCountryData(`${router.name}`).then((response) => {
+    setRouter({ path: pathname, ccn3: searchParams.get("ccn3") });
+    if (router.ccn3) {
+      fetchCountryData(`${router.ccn3}`).then((response) => {
         return setCountryData(response.data[0]);
       });
     }
-  }, [pathname, searchParams, router.name]);
+  }, [pathname, searchParams, router.ccn3]);
 
   return (
     <>

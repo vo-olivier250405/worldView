@@ -4,6 +4,6 @@ export const fetchAllCountriesData = async () => {
   return await api.get(`/v3.1/all`);
 };
 
-export const fetchCountryData = async (name: string) => {
-  return await api.get("v3.1/name/" + `${name}`);
+export const fetchCountryData = async (ccn3: string) => {
+  return await api.get("v3.1/alpha/" + `${ccn3}`);
 };

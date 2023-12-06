@@ -19,7 +19,7 @@ export const CardContainer = ({ countryData }: { countryData: Country }) => {
       <Link
         href={{
           pathname: "../pages/details/",
-          query: { name: countryData.name.common },
+          query: { ccn3: countryData.ccn3 },
         }}
       >
         <CardFlag>{countryData.flags.svg}</CardFlag>
