@@ -1,6 +1,7 @@
 import { PageWrapper } from "@/app/Animations";
 import { Country } from "@/interfaces/country";
 import { useState } from "react";
+import { HoverAnimation } from "@/app/Animations";
 
 export const booleanToString = (bool: boolean): string => {
   if (bool) {
@@ -33,7 +34,7 @@ export const ButtonDisplayPoliticalAdminData = ({
   const [isClicked, setIsClicked] = useState(true);
   const [isShow, setIsShow] = useState(true);
   return (
-    <>
+    <HoverAnimation>
       {isShow && (
         <section>
           <PageWrapper>
@@ -61,6 +62,6 @@ export const ButtonDisplayPoliticalAdminData = ({
           </PageWrapper>
         </section>
       )}
-    </>
+    </HoverAnimation>
   );
 };

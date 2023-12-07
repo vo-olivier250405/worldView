@@ -26,7 +26,7 @@ export const HoverAnimation = ({ children }: { children: any }) => {
   return (
     <>
       <AnimatePresence>
-        <motion.div whileHover={{ scale: 1.3 }} whileTap={{ scale: 0.9 }}>
+        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
           {children}
         </motion.div>
       </AnimatePresence>

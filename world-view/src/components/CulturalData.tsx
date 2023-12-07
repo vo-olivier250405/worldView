@@ -1,6 +1,7 @@
 import { PageWrapper } from "@/app/Animations";
 import { Country } from "@/interfaces/country";
 import { useState } from "react";
+import { HoverAnimation } from "@/app/Animations";
 
 export const Languages = ({ country }: { country: Country }) => {
   return <>Language(s): {getMutipleElementInDict(country.languages)}</>;
@@ -56,7 +57,7 @@ export const ButtonDisplayCulturalData = ({
   const [isClicked, setIsClicked] = useState(true);
   const [isShow, setIsShow] = useState(true);
   return (
-    <>
+    <HoverAnimation>
       {isShow && (
         <section>
           <PageWrapper>
@@ -84,6 +85,6 @@ export const ButtonDisplayCulturalData = ({
           </PageWrapper>
         </section>
       )}
-    </>
+    </HoverAnimation>
   );
 };

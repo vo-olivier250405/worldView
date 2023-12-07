@@ -3,6 +3,7 @@ import { PageWrapper } from "@/app/Animations";
 import { Country } from "@/interfaces/country";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { HoverAnimation } from "@/app/Animations";
 
 // export const getDistance = (country1: Country, country2: Country): boolean => {
 //   const degToRAd = (degrees: number) => {
@@ -88,7 +89,7 @@ export const ButtonDisplayGeoData = ({ country }: { country: Country }) => {
   const [isShow, setIsShow] = useState(true);
 
   return (
-    <>
+    <HoverAnimation>
       {isShow && (
         <section>
           <PageWrapper>
@@ -116,6 +117,6 @@ export const ButtonDisplayGeoData = ({ country }: { country: Country }) => {
           </PageWrapper>
         </section>
       )}
-    </>
+    </HoverAnimation>
   );
 };

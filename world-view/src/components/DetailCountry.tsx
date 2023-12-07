@@ -1,6 +1,4 @@
-import { fetchAllCountriesData } from "@/Country/CountryService";
 import { Country } from "@/interfaces/country";
-import { useEffect, useState } from "react";
 import { ButtonDisplayCulturalData } from "./CulturalData";
 import { ButtonDisplayBasicInformation } from "./BasicInformations";
 import { ButtonDisplayGeoData } from "./GeographicalData";

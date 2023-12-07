@@ -1,6 +1,7 @@
-import { Country, OfficialCommon } from "@/interfaces/country";
+import { Country } from "@/interfaces/country";
 import { useState } from "react";
 import { PageWrapper } from "@/app/Animations";
+import { HoverAnimation } from "@/app/Animations";
 
 export const GetNativeName = ({ country }: { country: Country }) => {
   let nameTab = [];
@@ -26,7 +27,7 @@ export const ButtonDisplayBasicInformation = ({
   const [isClicked, setIsClicked] = useState(true);
   const [isShow, setIsShow] = useState(true);
   return (
-    <>
+    <HoverAnimation>
       {isShow && (
         <section>
           <PageWrapper>
@@ -54,7 +55,7 @@ export const ButtonDisplayBasicInformation = ({
           </PageWrapper>
         </section>
       )}
-    </>
+    </HoverAnimation>
   );
 };
 
