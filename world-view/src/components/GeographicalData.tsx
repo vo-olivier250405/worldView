@@ -1,6 +1,7 @@
 import { fetchAllCountriesData } from "@/Country/CountryService";
 import { PageWrapper } from "@/app/Animations";
 import { Country } from "@/interfaces/country";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 // export const getDistance = (country1: Country, country2: Country): boolean => {
@@ -57,10 +58,17 @@ export const GeographicalData = ({ country }: { country: Country }) => {
             .filter((element) => country.borders.includes(element.fifa))
             .map((element: Country) => {
               return (
-                <div className="borders-flags">
-                  <img className="flags" src={element.flags.svg} alt="" />
-                  <h2 className="title">{element.name.common}</h2>
-                </div>
+                <Link
+                  href={{
+                    pathname: "/pages/details",
+                    query: { ccn3: element.ccn3 },
+                  }}
+                >
+                  <div className="borders-flags">
+                    <img className="flags" src={element.flags.svg} alt="" />
+                    <h2 className="title">{element.name.common}</h2>
+                  </div>
+                </Link>
               );
             })}
         <hr />

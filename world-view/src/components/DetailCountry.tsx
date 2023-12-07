@@ -12,6 +12,7 @@ import { ButtonHome } from "./ButtonHome";
 export const DetailCountry = ({ country }: { country: Country }) => {
   return (
     <section>
+      <br />
       <ButtonHome />
       <TitleFlag country={country} />
       <div className="datas">

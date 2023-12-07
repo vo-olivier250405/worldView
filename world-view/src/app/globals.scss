@@ -54,10 +54,24 @@ header{
 main{
   display: flex;
 }
+
+.filter{
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  select{
+    margin-left: 1rem;
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: #a0bbbd 1px solid;
+  }
+}
+
 .home-button{
   padding: 1rem;
   margin: 3rem;
   border: #a0bbbd 1px solid;
+  border-radius: 10px;
 }
 
 .container{
@@ -93,6 +107,9 @@ main{
   background-color: #a0bbbd;
 }
 
+.card-container{
+  width: 200px;
+}
 .card-container:hover{
   border-radius: 10px;
   background-color: #7f9192;
@@ -196,7 +213,15 @@ section.container{
     max-height: 200px;
   }
 }
-
+.borders-flags:hover{
+  background-color: #7f9192;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  .title{
+    margin: 1rem;
+    border-radius: 10px;
+  }
+}
 
 // RESPONSIVE
 
@@ -238,14 +263,15 @@ section.container{
 
   .datas{
     display: flex;
-    justify-content: left;
+    justify-content: center;
+    padding: 1rem;
 }
 .geographical-data{
   .borders{
       width: 300px;
       height: fit-content;
       overflow-y: scroll;
-      scrollbar-color: rebeccapurple green;
+      scrollbar-color: #a0bbbd transparent;
       scrollbar-width: thin;
     h1{
       padding: 1rem;

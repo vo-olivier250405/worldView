@@ -10,7 +10,7 @@ export const GetNativeName = ({ country }: { country: Country }) => {
   return nameTab.map((name) => {
     return (
       <div key={name} className="native-names">
-        <h1>Native Language: {name}</h1>
+        <h1>Native Language: {name.toUpperCase()}</h1>
         <h2>Native common name: {country.name.nativeName[name].common}</h2>
         <h2>Native official name: {country.name.nativeName[name].official}</h2>
       </div>

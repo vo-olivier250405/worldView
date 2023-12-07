@@ -16,7 +16,8 @@ const Demonyms = ({ country }: { country: Country }) => {
       <div key={element}>
         Demonyms
         {"\n"}
-        {element}: {country.demonyms[element].f} {country.demonyms[element].m}
+        {element.toUpperCase()}: 👧️: {country.demonyms[element].f} 🧑️:{" "}
+        {country.demonyms[element].m}
       </div>
     );
   });

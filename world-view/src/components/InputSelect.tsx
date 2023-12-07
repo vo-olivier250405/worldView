@@ -12,7 +12,7 @@ export const InputSelect = ({
     setFilter(event.target.value);
   };
   return (
-    <>
+    <div className="filter">
       <label htmlFor="filter">Filter by regions: </label>
       <select
         name="choice"
@@ -28,7 +28,6 @@ export const InputSelect = ({
         <option value="Oceania">Oceania</option>
         <option value="Europe">Europe</option>
       </select>
-      {console.log(filter)}
-    </>
+    </div>
   );
 };
