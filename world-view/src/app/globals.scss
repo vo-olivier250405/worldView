@@ -19,7 +19,7 @@ header{
   display: flex;
   justify-content: space-between;
   margin: 1rem;
-  height: 50rem;
+  height: 60rem;
   .planet{
     display: none;
     width: 500px;
@@ -30,7 +30,7 @@ header{
       padding-top: 20rem;
       padding-left: 6rem;
       padding-right: 3rem;
-      font-size: 80px;
+      font-size: 100px;
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke: 1px #B0CEFC;
     }
@@ -42,7 +42,7 @@ header{
       border-radius: 10px;
       display: flex;
       outline: none;
-      font-size: 20px;
+      font-size: 30px;
     }
     
   }
@@ -59,7 +59,11 @@ main{
   display: flex;
   justify-content: center;
   margin: 1rem;
+  label{
+    font-size: 30px;
+  }
   select{
+    font-size: 30px;
     margin-left: 1rem;
     padding: 0.2rem;
     border-radius: 5px;
@@ -69,7 +73,7 @@ main{
 
 .home-button{
   padding: 1rem;
-  margin: 3rem;
+  margin: 1rem;
   border: #a0bbbd 1px solid;
   border-radius: 10px;
 }
@@ -79,6 +83,10 @@ main{
   padding: 1rem;
 }
 
+.home-button:hover{
+  box-shadow: #043f46 0.5rem 0.5rem;
+  transition: all 0.3s ease;
+}
 
 .flags{
   display: grid;
@@ -136,6 +144,22 @@ section.container{
     padding-bottom: 1rem;
     border: none;
     background-color: transparent;
+  }
+}
+section.nav-bar {
+  padding: 0.2rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #2a383a;
+  
+  .search-bar{
+    padding: 1rem;
+    margin: 1rem;
+    border: #B0CEFC 1px solid;
+    border-radius: 10px;
+    font-size: 25px;
+    outline: none;
   }
 }
 
@@ -260,7 +284,12 @@ section.container{
       width: 500px;
     }
   }
-
+  section.nav-bar{
+    .search-bar{
+    font-size: 30px;
+  }
+  }
+  
   .datas{
     display: flex;
     justify-content: center;

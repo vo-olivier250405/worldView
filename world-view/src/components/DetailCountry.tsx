@@ -6,6 +6,7 @@ import { ButtonDisplayPoliticalAdminData } from "./PoliticalAdminData";
 import { TitleFlag } from "./TitleFlag";
 import { ButtonDisplayEcoDemoData } from "./EcoDemographicData";
 import { ButtonHome } from "./ButtonHome";
+import ButtonDownload from "./ButtonDownload";
 
 export const DetailCountry = ({ country }: { country: Country }) => {
   return (
@@ -20,6 +21,8 @@ export const DetailCountry = ({ country }: { country: Country }) => {
         <ButtonDisplayEcoDemoData country={country} />
         <ButtonDisplayCulturalData country={country} />
       </div>
+      <br />
+      {/* <ButtonDownload /> */}
     </section>
   );
 };

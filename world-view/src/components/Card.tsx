@@ -1,7 +1,6 @@
 import { CountryContext } from "@/contexts/contexts";
 import { Country } from "@/interfaces/country";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useContext, useEffect } from "react";
 
 export const CardName = ({ children }: { children: any }) => {
