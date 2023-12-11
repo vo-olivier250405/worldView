@@ -9,6 +9,7 @@ const drawTextPdf = (dataTab: string[], page: PDFPage) => {
     page.drawText(data, { x: 50, y: 2800 - index * 50, size: 20 });
   });
 };
+
 const ButtonDownload = ({
   country,
   border,

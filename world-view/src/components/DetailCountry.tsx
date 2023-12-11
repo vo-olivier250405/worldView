@@ -18,6 +18,7 @@ export const DetailCountry = ({ country }: { country: Country }) => {
       return setBorders(response.data);
     });
   }, [country]);
+
   return (
     <section>
       <br />
@@ -25,7 +26,7 @@ export const DetailCountry = ({ country }: { country: Country }) => {
       <TitleFlag country={country} />
       <div className="datas">
         <ButtonDisplayBasicInformation country={country} />
-        <ButtonDisplayGeoData country={country} />
+        <ButtonDisplayGeoData country={country} borders={borders} />
         <ButtonDisplayPoliticalAdminData country={country} />
         <ButtonDisplayEcoDemoData country={country} />
         <ButtonDisplayCulturalData country={country} />

@@ -26,15 +26,13 @@ import { HoverAnimation } from "@/app/Animations";
 //   return distance < 10000;
 // };
 
-export const GeographicalData = ({ country }: { country: Country }) => {
-  const [borders, setBorders] = useState<Country[]>([]);
-
-  useEffect(() => {
-    fetchAllCountriesData().then((response) => {
-      return setBorders(response.data);
-    });
-  }, [country]);
-  console.log(borders, "here");
+export const GeographicalData = ({
+  country,
+  borders,
+}: {
+  country: Country;
+  borders: Country[];
+}) => {
   return (
     <section className="geographical-data">
       <div className="latling">
@@ -84,7 +82,13 @@ export const GeographicalData = ({ country }: { country: Country }) => {
   );
 };
 
-export const ButtonDisplayGeoData = ({ country }: { country: Country }) => {
+export const ButtonDisplayGeoData = ({
+  country,
+  borders,
+}: {
+  country: Country;
+  borders: Country[];
+}) => {
   const [isClicked, setIsClicked] = useState(true);
   const [isShow, setIsShow] = useState(true);
 
@@ -113,7 +117,7 @@ export const ButtonDisplayGeoData = ({ country }: { country: Country }) => {
           }}
         >
           <PageWrapper>
-            <GeographicalData country={country} />
+            <GeographicalData country={country} borders={borders} />
           </PageWrapper>
         </section>
       )}

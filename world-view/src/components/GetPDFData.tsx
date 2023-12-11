@@ -20,13 +20,15 @@ export const generateCardText = (country: Country, borders: Country[]) => {
   result.push("BORDER COUNTRIES");
   let borderCountryString: string = "";
   let counter: number = 0;
-  borders.map((borderCountry: Country, index: number) => {
-    borderCountryString += borderCountry.name.common + ", ";
-    if (index % 10 === 0) {
-      borderCountryString += "\n";
-      counter += 1;
-    }
-  });
+  borders
+    .filter((element) => country.borders.includes(element.fifa))
+    .map((borderCountry: Country, index: number) => {
+      borderCountryString += borderCountry.name.common + ", ";
+      if (index % 10 === 0) {
+        borderCountryString += "\n";
+        counter += 1;
+      }
+    });
   result.push(borderCountryString);
   for (let i = 0; i < counter / 2; i++) {
     result.push("\n");
