@@ -7,8 +7,17 @@ import { TitleFlag } from "./TitleFlag";
 import { ButtonDisplayEcoDemoData } from "./EcoDemographicData";
 import { ButtonHome } from "./ButtonHome";
 import ButtonDownload from "./ButtonDownload";
+import { fetchAllCountriesData } from "@/Country/CountryService";
+import { useState, useEffect } from "react";
 
 export const DetailCountry = ({ country }: { country: Country }) => {
+  const [borders, setBorders] = useState<Country[]>([]);
+
+  useEffect(() => {
+    fetchAllCountriesData().then((response) => {
+      return setBorders(response.data);
+    });
+  }, [country]);
   return (
     <section>
       <br />
@@ -22,7 +31,7 @@ export const DetailCountry = ({ country }: { country: Country }) => {
         <ButtonDisplayCulturalData country={country} />
       </div>
       <br />
-      {/* <ButtonDownload /> */}
+      {borders && <ButtonDownload country={country} border={borders} />}
     </section>
   );
 };
