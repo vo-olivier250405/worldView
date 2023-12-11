@@ -247,6 +247,23 @@ section.nav-bar {
   }
 }
 
+.button-download{
+  button{
+    border: #a0bbbd 1px solid;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: #a0bbbd 0.5rem 0.5rem;
+    
+  }
+
+}
+
+.button-download button:hover{
+  background-color: #a0bbbd;
+  color: #021517;
+  box-shadow: 0.5rem 0.5rem #043f46;
+  }
 // RESPONSIVE
 
 @media (width > 200px){

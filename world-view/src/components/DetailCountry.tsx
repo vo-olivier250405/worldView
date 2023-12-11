@@ -29,9 +29,9 @@ export const DetailCountry = ({ country }: { country: Country }) => {
         <ButtonDisplayPoliticalAdminData country={country} />
         <ButtonDisplayEcoDemoData country={country} />
         <ButtonDisplayCulturalData country={country} />
+        {borders && <ButtonDownload country={country} border={borders} />}
       </div>
       <br />
-      {borders && <ButtonDownload country={country} border={borders} />}
     </section>
   );
 };
