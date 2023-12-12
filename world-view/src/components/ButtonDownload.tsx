@@ -29,7 +29,7 @@ const ButtonDownload = ({
       const url = URL.createObjectURL(pdfBlob);
       setDownloadUrl(url);
     } catch (error) {
-      console.log("Error: can't generate PDF file.");
+      alert("Error: can't generate PDF file for " + country.name.common);
     }
   };
 
