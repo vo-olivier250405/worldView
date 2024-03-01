@@ -29,7 +29,7 @@ const ButtonDownload = ({
       const url = URL.createObjectURL(pdfBlob);
       setDownloadUrl(url);
     } catch (error) {
-      alert("Error: can't generate PDF file for " + country.name.common);
+      alert("Cannot generate PDF file for " + country.name.common);
     }
   };
 
@@ -43,13 +43,13 @@ const ButtonDownload = ({
       link.click();
       document.body.removeChild(link);
     }
-  }, [downloadUrl]);
+  }, [downloadUrl, country.name && country.name.common]);
 
   return (
     <HoverAnimation>
       <div className="button-download">
         <button onClick={() => handleClick(country)}>
-          Download country's Card
+          Download Country Card
         </button>
       </div>
     </HoverAnimation>

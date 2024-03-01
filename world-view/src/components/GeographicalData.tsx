@@ -55,13 +55,14 @@ export const GeographicalData = ({
           country.borders &&
           borders
             .filter((element) => country.borders.includes(element.fifa))
-            .map((element: Country) => {
+            .map((element: Country, index: number) => {
               return (
                 <Link
                   href={{
                     pathname: "/pages/details",
                     query: { ccn3: element.ccn3 },
                   }}
+                  key={index}
                 >
                   <div className="borders-flags">
                     <img className="flags" src={element.flags.svg} alt="" />
